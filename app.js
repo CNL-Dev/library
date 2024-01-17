@@ -33,4 +33,10 @@ function addTestBooks(){
     const book1 = new Book("Crime and Punishment", "Fyodor Dostoevsky", 527, true);
     const book2 = new Book("No Longer Human", "Osamu Dazai", 176, true);
     const book3 = new Book("Brave New World", "Aldous Huxley", 311, false);
+
+    addBookToLibrary(book1);
+    addBookToLibrary(book2);
+    addBookToLibrary(book3);
 }
+
+addTestBooks();

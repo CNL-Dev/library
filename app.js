@@ -23,6 +23,7 @@ function iterateThroughLibrary() {
 function displayBooks() {
     for(i = 0; i < library.length; i++){
         const bookDisplay = document.createElement('div');
+        bookDisplay.classList.add('book-content');
 
         const bookTitle = document.createElement('p');
         bookTitle.textContent = library[i].title;

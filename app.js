@@ -21,8 +21,25 @@ function iterateThroughLibrary() {
 
 // Displays the books in the bookContainer
 function displayBooks() {
-    for(i = 0; i < library.length - 1; i++){
+    for(i = 0; i < library.length; i++){
         const bookDisplay = document.createElement('div');
+
+        const bookTitle = document.createElement('p');
+        bookTitle.textContent = library[i].title;
+
+        const bookAuthor =  document.createElement('p');
+        bookAuthor.textContent = library[i].author;
+
+        const bookPages = document.createElement('p');
+        bookPages.textContent = library[i].pages;
+
+        const bookHasRead = document.createElement('p');
+        bookHasRead.textContent = library[i].hasRead;
+
+        bookDisplay.appendChild(bookTitle);
+        bookDisplay.appendChild(bookAuthor);
+        bookDisplay.appendChild(bookPages);
+        bookDisplay.appendChild(bookHasRead);
 
         bookContainer.appendChild(bookDisplay)
     }
@@ -40,3 +57,4 @@ function addTestBooks(){
 }
 
 addTestBooks();
+displayBooks();

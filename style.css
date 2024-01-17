@@ -1,8 +1,15 @@
 :root {
-
+    --grey: #e5e7eb;
 }
 
 body {
     padding: 0;
     margin: 0;
+}
+
+.book-content {
+    background-color: var(--grey);
+    border-radius: 5px;
+    min-width: 15vh;
+    max-width: 45vh;
 }

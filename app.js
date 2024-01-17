@@ -27,3 +27,10 @@ function displayBooks() {
         bookContainer.appendChild(bookDisplay)
     }
 }
+
+// Adds some books for display testing purposes
+function addTestBooks(){
+    const book1 = new Book("Crime and Punishment", "Fyodor Dostoevsky", 527, true);
+    const book2 = new Book("No Longer Human", "Osamu Dazai", 176, true);
+    const book3 = new Book("Brave New World", "Aldous Huxley", 311, false);
+}

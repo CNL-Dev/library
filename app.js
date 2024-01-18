@@ -26,16 +26,16 @@ function displayBooks() {
         bookDisplay.classList.add('book-content');
 
         const bookTitle = document.createElement('p');
-        bookTitle.textContent = library[i].title;
+        bookTitle.textContent = `Title: ${library[i].title}`;
 
         const bookAuthor =  document.createElement('p');
-        bookAuthor.textContent = library[i].author;
+        bookAuthor.textContent = `Author: ${library[i].author}`;
 
         const bookPages = document.createElement('p');
-        bookPages.textContent = library[i].pages;
+        bookPages.textContent = `Pages: ${library[i].pages}`;
 
         const bookHasRead = document.createElement('p');
-        bookHasRead.textContent = library[i].hasRead;
+        bookHasRead.textContent = `Has read? ${library[i].hasRead}`;
 
         bookDisplay.appendChild(bookTitle);
         bookDisplay.appendChild(bookAuthor);

@@ -18,4 +18,6 @@ body {
     border-radius: 5px;
     min-width: 15vh;
     max-width: 45vh;
+    margin: 5px;
+    padding: 5px;
 }

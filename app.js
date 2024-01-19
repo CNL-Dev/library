@@ -46,6 +46,16 @@ function displayBooks() {
     }
 }
 
+// Refreshes the display by removing all library contents
+// and calling display books again
+function refreshDisplay() {
+    for(i = library.length; i > 0; i--){
+        library.pop();
+    }
+
+    displayBooks();
+}
+
 // Adds some books for display testing purposes
 function addTestBooks(){
     const book1 = new Book("Crime and Punishment", "Fyodor Dostoevsky", 527, true);

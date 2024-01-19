@@ -14,11 +14,6 @@ function addBookToLibrary(book) {
     library.push(book);
 }
 
-// Iterates through the library array
-function iterateThroughLibrary() {
-
-}
-
 // Displays the books in the bookContainer
 function displayBooks() {
     for(i = 0; i < library.length; i++){

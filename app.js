@@ -14,6 +14,11 @@ function addBookToLibrary(book) {
     library.push(book);
 }
 
+// Creates a new book
+function createBook() {
+
+}
+
 // Displays the books in the bookContainer
 function displayBooks() {
     for(i = 0; i < library.length; i++){

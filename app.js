@@ -14,6 +14,10 @@ function Book(title, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
+// On click, adds a new book with the data provided
+// via the form
+addBookButton.addEventListener('click', createBook);
+
 // Add a book to the library array
 function addBookToLibrary(book) {
     library.push(book);

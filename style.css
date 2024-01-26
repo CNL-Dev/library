@@ -9,8 +9,14 @@ body {
 
 .page-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+}
+
+.book-creation-container, form {
+    display: flex;
+    flex-direction: column;
 }
 
 .book-content {

@@ -1,5 +1,10 @@
 const bookContainer = document.querySelector(".book-container");
 const library  = [];
+const addBookButton = document.querySelector('add-book-button');
+const bookTitleInput = document.getElementById('bookTitle');
+const bookAuthorInput = document.getElementById('bookAuthor');
+const bookPagesInput = document.getElementById('bookPages');
+const bookHasReadInput = document.getElementById('bookHasRead');
 
 // Book constructor
 function Book(title, author, pages, hasRead) {
@@ -16,7 +21,7 @@ function addBookToLibrary(book) {
 
 // Creates a new book
 function createBook() {
-
+    
 }
 
 // Displays the books in the bookContainer

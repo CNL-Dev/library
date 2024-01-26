@@ -10,8 +10,7 @@
 <body>
     <div class="page-content">
         <div class="left-content">
-            <h1>Library</h1>
-            <button class="add-book-button">Add Book</button>
+            <h1>Library</h1>           
             <div>
                 <h2>My Bookshelf</h2>
                 <div class="book-container">
@@ -20,7 +19,19 @@
             </div>     
         </div> 
         <div class="right-content">
-            
+            <div class="book-creation-container">
+                <button class="add-book-button">Add Book</button>
+                <form>
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" id="bookTitle" name="bookTitle">
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" id="bookAuthor" name="bookAuthor">
+                    <label for="bookPages">Pages: </label>
+                    <input type="number" id="bookPages" name="bookPages">
+                    <label for="bookHasRead">Already read?</label>
+                    <input type="checkbox" id="bookHasRead" name="bookHasRead">
+                </form>
+            </div>
         </div>  
     </div>
 </body>

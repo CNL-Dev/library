@@ -1,6 +1,6 @@
 const bookContainer = document.querySelector(".book-container");
 const library  = [];
-const addBookButton = document.querySelector('add-book-button');
+const addBookButton = document.querySelector('.add-book-button');
 const bookTitleInput = document.getElementById('bookTitle');
 const bookAuthorInput = document.getElementById('bookAuthor');
 const bookPagesInput = document.getElementById('bookPages');
@@ -25,7 +25,14 @@ function addBookToLibrary(book) {
 
 // Creates a new book
 function createBook() {
-    
+    const newBook = new Book(
+        bookTitleInput.value,
+        bookAuthorInput.value,
+        bookPagesInput.value,
+        bookHasReadInput.checked
+    );
+
+    addBookToLibrary(newBook);
 }
 
 // Displays the books in the bookContainer

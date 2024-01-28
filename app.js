@@ -21,6 +21,7 @@ addBookButton.addEventListener('click', createBook);
 // Add a book to the library array
 function addBookToLibrary(book) {
     library.push(book);
+    refreshDisplay();
 }
 
 // Creates a new book
@@ -65,9 +66,7 @@ function displayBooks() {
 // Refreshes the display by removing all library contents
 // and calling display books again
 function refreshDisplay() {
-    for(i = library.length; i > 0; i--){
-        library.pop();
-    }
+    bookContainer.innerHTML = '';
 
     displayBooks();
 }
@@ -84,4 +83,3 @@ function addTestBooks(){
 }
 
 addTestBooks();
-displayBooks();

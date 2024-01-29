@@ -63,7 +63,7 @@ function displayBooks() {
     }
 }
 
-// Refreshes the display by removing all library contents
+// Refreshes the display by removing all book-container content
 // and calling display books again
 function refreshDisplay() {
     bookContainer.innerHTML = '';

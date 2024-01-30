@@ -5,6 +5,8 @@ const bookTitleInput = document.getElementById('bookTitle');
 const bookAuthorInput = document.getElementById('bookAuthor');
 const bookPagesInput = document.getElementById('bookPages');
 const bookHasReadInput = document.getElementById('bookHasRead');
+const removeButtons = document.querySelectorAll('.remove-button');
+const readButtons = document.querySelectorAll('.read-button');
 
 // Book constructor
 function Book(title, author, pages, hasRead) {
@@ -58,9 +60,11 @@ function displayBooks() {
         bookButtonContainer.classList.add('book-button-container');
 
         const bookRemoveButton = document.createElement('button');
+        bookRemoveButton.classList.add('remove-button');
         bookRemoveButton.textContent = "X";
 
         const bookReadButton = document.createElement('button');
+        bookReadButton.classList.add('read-button');
         bookReadButton.textContent = "Mark as read";
 
         bookButtonContainer.appendChild(bookReadButton);

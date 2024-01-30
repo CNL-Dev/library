@@ -9,7 +9,8 @@ const removeButtons = document.querySelectorAll('.remove-button');
 const readButtons = document.querySelectorAll('.read-button');
 
 // Book constructor
-function Book(title, author, pages, hasRead) {
+function Book(id, title, author, pages, hasRead) {
+    this.id = id;
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -28,7 +29,11 @@ function addBookToLibrary(book) {
 
 // Creates a new book
 function createBook() {
+    // Generate unique id
+    const bookId = Date.now().toString(36) + Math.random().toString(36).substring(2);  
+
     const newBook = new Book(
+        bookId,
         bookTitleInput.value,
         bookAuthorInput.value,
         bookPagesInput.value,

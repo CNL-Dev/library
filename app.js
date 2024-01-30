@@ -57,8 +57,10 @@ function displayBooks() {
         const bookButtonContainer = document.createElement('div');
 
         const bookRemoveButton = document.createElement('button');
+        bookRemoveButton.textContent = "X";
 
         const bookReadButton = document.createElement('button');
+        bookReadButton.textContent = "Mark as read";
 
         bookButtonContainer.appendChild(bookReadButton);
         bookButtonContainer.appendChild(bookRemoveButton);

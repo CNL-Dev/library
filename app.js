@@ -54,10 +54,20 @@ function displayBooks() {
         const bookHasRead = document.createElement('p');
         bookHasRead.textContent = `Has read? ${library[i].hasRead}`;
 
+        const bookButtonContainer = document.createElement('div');
+
+        const bookRemoveButton = document.createElement('button');
+
+        const bookReadButton = document.createElement('button');
+
+        bookButtonContainer.appendChild(bookReadButton);
+        bookButtonContainer.appendChild(bookRemoveButton);
+
         bookDisplay.appendChild(bookTitle);
         bookDisplay.appendChild(bookAuthor);
         bookDisplay.appendChild(bookPages);
         bookDisplay.appendChild(bookHasRead);
+        bookDisplay.appendChild(bookButtonContainer);
 
         bookContainer.appendChild(bookDisplay)
     }

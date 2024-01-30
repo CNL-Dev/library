@@ -55,6 +55,7 @@ function displayBooks() {
         bookHasRead.textContent = `Has read? ${library[i].hasRead}`;
 
         const bookButtonContainer = document.createElement('div');
+        bookButtonContainer.classList.add('book-button-container');
 
         const bookRemoveButton = document.createElement('button');
         bookRemoveButton.textContent = "X";

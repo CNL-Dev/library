@@ -54,7 +54,6 @@ function displayBooks() {
     for(i = 0; i < library.length; i++){
         const bookDisplay = document.createElement('div');
         bookDisplay.classList.add('book-content');
-        bookDisplay.setAttribute('id', `${library[i].id}`);
 
         const bookTitle = document.createElement('p');
         bookTitle.textContent = `Title: ${library[i].title}`;
@@ -73,10 +72,12 @@ function displayBooks() {
 
         const bookRemoveButton = document.createElement('button');
         bookRemoveButton.classList.add('remove-button');
+        bookRemoveButton.setAttribute('id', `${library[i].id}`);
         bookRemoveButton.textContent = "X";
 
         const bookReadButton = document.createElement('button');
         bookReadButton.classList.add('read-button');
+        bookReadButton.setAttribute('id', `${library[i].id}`);
         bookReadButton.textContent = "Mark as read";
 
         bookButtonContainer.appendChild(bookReadButton);

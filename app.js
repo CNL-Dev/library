@@ -54,6 +54,7 @@ function displayBooks() {
     for(i = 0; i < library.length; i++){
         const bookDisplay = document.createElement('div');
         bookDisplay.classList.add('book-content');
+        bookDisplay.setAttribute('id', `${library[i].id}`);
 
         const bookTitle = document.createElement('p');
         bookTitle.textContent = `Title: ${library[i].title}`;

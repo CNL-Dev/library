@@ -17,6 +17,12 @@ function Book(id, title, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
+readButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        
+    });
+});
+
 // On click, adds a new book with the data provided
 // via the form
 addBookButton.addEventListener('click', createBook);
@@ -30,7 +36,7 @@ function addBookToLibrary(book) {
 // Creates a new book
 function createBook() {
     // Generate unique id
-    const bookId = Date.now().toString(36) + Math.random().toString(36).substring(2);  
+    const bookId = Date.now() + Math.random();  
 
     const newBook = new Book(
         bookId,
@@ -95,9 +101,9 @@ function refreshDisplay() {
 
 // Adds some books for display testing purposes
 function addTestBooks(){
-    const book1 = new Book("Crime and Punishment", "Fyodor Dostoevsky", 527, true);
-    const book2 = new Book("No Longer Human", "Osamu Dazai", 176, true);
-    const book3 = new Book("Brave New World", "Aldous Huxley", 311, false);
+    const book1 = new Book(123, "Crime and Punishment", "Fyodor Dostoevsky", 527, true);
+    const book2 = new Book(456, "No Longer Human", "Osamu Dazai", 176, true);
+    const book3 = new Book(789, "Brave New World", "Aldous Huxley", 311, false);
 
     addBookToLibrary(book1);
     addBookToLibrary(book2);

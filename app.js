@@ -17,9 +17,32 @@ function Book(id, title, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
+removeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        for(i = 0; i < library.length; i++) {
+            if(button.id == library[i].id) {
+                const newLibrary = library.splice(i, i);
+                library = newLibrary;
+            }
+        }
+    });
+});
+
 readButtons.forEach(button => {
     button.addEventListener('click', () => {
-        
+        for(i = 0; i < library.length; i++) {
+            console.log(button.id + " " + library[i].id)
+            if(button.id == library[i].id) {                
+                if(library[i].hasRead == false) {
+                    library[i].hasRead = true;
+                }
+                else if (library[i].hasRead == true) {
+                    library[i].hasRead = false;
+                }
+            }
+        }
+
+        refreshDisplay();
     });
 });
 
@@ -78,7 +101,16 @@ function displayBooks() {
         const bookReadButton = document.createElement('button');
         bookReadButton.classList.add('read-button');
         bookReadButton.setAttribute('id', `${library[i].id}`);
-        bookReadButton.textContent = "Mark as read";
+        
+        let bookReadButtonText = "";
+        if(library[i].hasRead == true) {
+            bookReadButtonText = "Mark as unread"
+        }
+        else {
+            bookReadButtonText = "Mark as read"
+        }
+
+        bookReadButton.textContent = bookReadButtonText;
 
         bookButtonContainer.appendChild(bookReadButton);
         bookButtonContainer.appendChild(bookRemoveButton);

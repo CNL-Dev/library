@@ -5,8 +5,8 @@ const bookTitleInput = document.getElementById('bookTitle');
 const bookAuthorInput = document.getElementById('bookAuthor');
 const bookPagesInput = document.getElementById('bookPages');
 const bookHasReadInput = document.getElementById('bookHasRead');
-const removeButtons = document.querySelectorAll('.remove-button');
-const readButtons = document.querySelectorAll('.read-button');
+const removeButtons = document.querySelectorAll('.remove-book-button');
+const readButtons = document.querySelectorAll('.read-book-button');
 
 // Book constructor
 function Book(id, title, author, pages, hasRead) {
@@ -18,32 +18,11 @@ function Book(id, title, author, pages, hasRead) {
 }
 
 removeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        for(i = 0; i < library.length; i++) {
-            if(button.id == library[i].id) {
-                const newLibrary = library.splice(i, i);
-                library = newLibrary;
-            }
-        }
-    });
+    button.addEventListener('click', removeBookFromLibrary);
 });
 
 readButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        for(i = 0; i < library.length; i++) {
-            console.log(button.id + " " + library[i].id)
-            if(button.id == library[i].id) {                
-                if(library[i].hasRead == false) {
-                    library[i].hasRead = true;
-                }
-                else if (library[i].hasRead == true) {
-                    library[i].hasRead = false;
-                }
-            }
-        }
-
-        refreshDisplay();
-    });
+    button.addEventListener('click', updateBookReadStatus);
 });
 
 // On click, adds a new book with the data provided
@@ -54,6 +33,35 @@ addBookButton.addEventListener('click', createBook);
 function addBookToLibrary(book) {
     library.push(book);
     refreshDisplay();
+}
+
+function removeBookFromLibrary() {
+    for(i = 0; i < library.length; i++) {
+        console.log(button.id + " " + library[i].id);
+        if(button.id == library[i].id) {                
+            if(library[i].hasRead == false) {
+                library[i].hasRead = true;
+            }
+            else if (library[i].hasRead == true) {
+                library[i].hasRead = false;
+            }
+            refreshDisplay();
+            return;
+        }
+    }
+
+    refreshDisplay();
+}
+
+function updateBookReadStatus() {
+    for(i = 0; i < library.length; i++) {
+        if(button.id == library[i].id) {
+            const newLibrary = library.splice(i, i);
+            library = newLibrary;
+            refreshDisplay();
+            return;
+        }
+    }
 }
 
 // Creates a new book
@@ -94,12 +102,12 @@ function displayBooks() {
         bookButtonContainer.classList.add('book-button-container');
 
         const bookRemoveButton = document.createElement('button');
-        bookRemoveButton.classList.add('remove-button');
+        bookRemoveButton.classList.add('remove-book-button');
         bookRemoveButton.setAttribute('id', `${library[i].id}`);
         bookRemoveButton.textContent = "X";
 
         const bookReadButton = document.createElement('button');
-        bookReadButton.classList.add('read-button');
+        bookReadButton.classList.add('read-book-button');
         bookReadButton.setAttribute('id', `${library[i].id}`);
         
         let bookReadButtonText = "";
